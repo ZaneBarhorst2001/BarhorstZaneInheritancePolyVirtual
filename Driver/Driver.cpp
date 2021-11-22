@@ -1,20 +1,54 @@
-// Driver.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//Zane Barhorst
+//CIS 1202 502
+//11/21/21
 
 #include <iostream>
+#include <string>
+#include "Vehicle_C.h"
+#include "Car_C.h"
+#include "Truck_C.h"
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+
+int main() {
+	string man;
+	int year;
+	int numDoors;
+	int tow;
+
+	cout << "Vehicle Program\n";
+	cout << "Vehicle: \n";
+	cout << "Please enter the manufacturer: ";
+	getline(cin, man);
+	cout << "Please enter the year the vehicle was built: ";
+	cin >> year;
+
+	//Creating the vehicle class object
+	Vehicle_C vehicle(man, year);
+	vehicle.displayInfo();
+	cout << "\n";
+	
+	cout << "Car: \n";
+	cout << "Please enter the manufacturer: ";
+	getline(cin, man);
+	cout << "Please enter the year built: \n";
+	cin >> year;
+	cout << "Please enter the number of doors: \n";
+	cin >> numDoors;
+
+	//Creating the car class object
+	Car_C car(man, year, numDoors);
+	car.displayInfo();
+
+	cout << "Truck: \n";
+	cout << "Please enter the manufacturer: ";
+	getline(cin, man);
+	cout << "Please enter the year built: \n";
+	cin >> year;
+	cout << "Please enter the towing capacity: \n";
+	cin >> numDoors;
+
+	//Creating the car class object
+	Truck_C car(man, year, numDoors);
+	car.displayInfo();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
